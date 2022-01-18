@@ -1,0 +1,7 @@
+name: 'WordPress Version Tracker'
+type: module
+description: 'Module to track WordPress version numbers given site URLs'
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+version: '1'
+project: 'versiontracker'

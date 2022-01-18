@@ -1,0 +1,38 @@
+versiontracker.versiontracker_controller_listsites:
+  path: '/version_tracker'
+  defaults:
+    _controller: '\Drupal\versiontracker\Controller\VersionTrackerController::listsites'
+    _title: 'Sites to Check'
+  requirements:
+    _permission: 'access content'
+
+versiontracker.versiontracker_controller_listtests:
+  path: '/version_tracker/results'
+  defaults:
+    _controller: '\Drupal\versiontracker\Controller\VersionTrackerController::listtests'
+    _title: 'Test History'
+  requirements:
+    _permission: 'access content'
+
+versiontracker.create_form:
+  path: '/version_tracker/create'
+  defaults:
+    _form: '\Drupal\versiontracker\Form\CreateForm'
+    _title: 'ADD/ EDIT Sites'
+  requirements:
+    _permission: 'TRUE'
+
+versiontracker.delete_form:
+  path: '/version_tracker/destroy/{cid}'
+  defaults:
+    _form: '\Drupal\versiontracker\Form\DeleteForm'
+    _title: 'DELETE Sites'
+  requirements:
+    _permission: 'TRUE'
+
+versiontracker.submit_form:
+  path: '/version_tracker/submit'
+  defaults:
+    _form: '\Drupal\versiontracker\Form\SubmitForm'
+  requirements:
+    _permission: 'TRUE'

@@ -1,0 +1,33 @@
+<?php
+
+function versiontracker_schema() {
+    $schema= array();
+
+    $schema['test_sites'] = [
+        'description'=>'This table houses all unique sites that have been tested in the past',
+        'fields'=>[
+            'id'=>['decription'=>'The primary key','type'=>'serial','not null'=>TRUE,'unsigned'=>TRUE,],
+            'created_at'=>['description'=>'Date added','mysql_type'=>'timestamp','not null'=>FALSE,],
+            'updated_at'=>['description'=>'Date updated','mysql_type'=>'timestamp','not null'=>FALSE,],
+            'url'=>['description'=>'Url to check','type'=>'varchar','length'=>'255','not null'=>TRUE,],
+            'notes'=>['description'=>'Notes','type'=>'varchar','length'=>'255','not null'=>TRUE,],
+            'active'=>['description'=>'Site status','type'=>'int','pgsql_type'=>'boolean','not null'=>TRUE,],
+        ],
+        'primary key'=>['id'],
+    ];
+    $schema['test_results'] = [
+        'description'=>'This table houses all tests that have been run in the past',
+        'fields'=>[
+            'id'=>['decription'=>'The primary key','type'=>'serial','not null'=>TRUE,'unsigned'=>TRUE,],
+            'url'=>['description'=>'Url of checked site','type'=>'varchar','length'=>'255','not null'=>TRUE,],
+            'test_date'=>['description'=>'Date of test','mysql_type'=>'timestamp','not null'=>FALSE,],
+            'wp_version'=>['description'=>'WordPress version','type'=>'varchar','length'=>'255','not null'=>TRUE,],
+        ],
+        'primary key'=>['id'],
+    ];
+
+
+    return $schema;
+}
+
+?>

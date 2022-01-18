@@ -1,0 +1,6 @@
+versiontracker.versiontracker_controller_listsites:
+  title: 'Version Tracker'
+  description: 'Version Tracker (checks WordPress versions)'
+  route_name: versiontracker.versiontracker_controller_listsites
+  weight: 100
+  menu_name: main
